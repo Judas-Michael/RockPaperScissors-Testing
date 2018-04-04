@@ -1,5 +1,57 @@
 import random
 
+computerWin = "The computer"
+humanWin = "The player"
+tieWin = "tie"
+#1 = Rock
+#2 = Paper
+#3 = Scissors
+
+def computer_choose():
+   
+   	x = random.randint(1,3) #this assigns the computers choice
+	
+	return x
+
+def human_choose():
+
+   choice = input("Rock, Paper, Scissors?")
+   return choice
+
+def who_won(human, computer):
+
+if choice == "Rock" and x == 2:
+		winner = computer
+	if choice == "Rock" and x == 1:
+		winner= tieWin
+	if choice == "Rock" and x == 3:
+		winner = human
+	if choice == "Scissors" and x == 2:
+		winner = human
+	if choice == "Scissors" and x == 1:
+		winner = computer
+	if choice == "Rock" and x == 3:
+		winner= tieWin
+	if choice == "Paper" and x == 2:
+		winner = tieWin
+	if choice == "Paper" and x == 1:
+		winner = human
+	if choice =="Paper" and x == 3:
+		winner = computer
+	return winner
+
+def game():
+
+   c = computer_choose()
+
+   h = human_choose()
+
+   winner = who_won(h, c)
+   if winner != tieWin
+		print(winner + "is the winner")
+	else
+		print("It's a tie!")
+
 def main():
 
 	answer = "Y"
@@ -9,8 +61,7 @@ def main():
 		answer = input("Wanna play 'Rock Paper Scissors'? (Y or N) ")
 		if answer == "Y":
 			print("Cool!")
-			choice = input("Rock, Paper, Scissors?")
-			comp_choice = choose(choice)
+			game()
 	
 		if answer == "N":
 			print("Oh.... ok")
@@ -19,26 +70,3 @@ def main():
 			print("That's not an answer!")
 		
 		
-def choose(choice):
-	x = random.randint(1,3) #this assigns the computers choice
-	
-	#Maybe make a separate print function to send information to?
-	if choice == "Rock" and x == 2:
-		print("Your opponent chose Paper. You lose!")
-	if choice == "Rock" and x == 1:
-		print("Your opponent also chose Rock. It's a tie!")
-	if choice == "Rock" and x == 3:
-		print("Your opponent chose Scissors. You win!")
-	if choice == "Scissors" and x == 2:
-		print("Your opponent chose Paper. You win!")
-	if choice == "Scissors" and x == 1:
-		print("Your opponent also chose Rock. You lose!")
-	if choice == "Rock" and x == 3:
-		print("Your opponent chose Scissors. It's a tie!")
-	if choice == "Paper" and x == 2:
-		print("Your opponent chose Paper. It's a tie!")
-	if choice == "Paper" and x == 1:
-		print("Your opponent also chose Rock. You win!")
-	if choice =="Paper" and x == 3:
-		print("Your opponent chose Scissors. You lose!")
-	return null #This code can be cleaned and condensed
